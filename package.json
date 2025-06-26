@@ -1,0 +1,10 @@
+{
+  "name": "manage",
+  "type": "module",
+  "bin": {
+    "manage": "index.js"
+  },
+  "dependencies": {
+    "commander": "^14.0.0"
+  }
+}
