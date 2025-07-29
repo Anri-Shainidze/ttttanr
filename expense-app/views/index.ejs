@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ხარჯების სია</title>
+</head>
+<body>
+  <h1>ხარჯების სია</h1>
+
+  <form action="/add" method="POST">
+    <input type="text" name="title" placeholder="დასახელება" required />
+    <input type="number" name="amount" placeholder="თანხა" required />
+    <button type="submit">დამატება</button>
+  </form>
+
+  <ul>
+    <% expenses.forEach(exp => { %>
+      <li>
+        <a href="/expense/<%= exp.id %>"><%= exp.title %> - <%= exp.amount %>₾</a>
+        <form action="/delete/<%= exp.id %>" method="POST" style="display:inline;">
+          <button>წაშლა</button>
+        </form>
+        <a href="/edit/<%= exp.id %>">რედაქტირება</a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
